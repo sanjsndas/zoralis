@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Zoralis Green Pathways</title>
+  <!-- unique typography: IBM Plex Serif + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ———— reset & base (same as blog) ———— */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf7f2;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
+    h1, h2, h3, h4 {
+      font-family: 'IBM Plex Serif', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1d2c1f;
+    }
+    h1 { font-size: 2.8rem; font-weight: 700; }
+    h2 {
+      font-size: 2.1rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #7f9f7a;
+      padding-left: 1rem;
+    }
+    h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.8rem; color: #3c5438; }
+    p { margin-bottom: 1.4rem; color: #2e3a2b; }
+    .meta, .small { font-size: 0.9rem; color: #5f6e5a; letter-spacing: 0.02em; }
+    a {
+      color: #2d6b3a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b6cdb0;
+    }
+    a:hover { color: #1b4624; border-bottom: 1px solid #1b4624; }
+
+    /* header / nav (exact copy) */
+    .site-header {
+      padding: 2rem 0 1rem;
+      border-bottom: 1px solid #e2dcd2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1d3d21;
+      letter-spacing: -0.03em;
+    }
+    .logo span { color: #6f8f6a; font-weight: 400; }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .nav-links a { border-bottom: none; color: #2f402c; }
+    .nav-links a:hover { color: #1b4b25; }
+
+    /* cards & utilities (reuse) */
+    .card {
+      background: #fffffffb;
+      padding: 1.8rem 1.8rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 28px -10px rgba(30, 40, 20, 0.06);
+      border: 1px solid #ece7de;
+      transition: all 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 20px 32px -14px rgba(50, 70, 40, 0.12);
+      border-color: #cddcc5;
+    }
+    .badge-green {
+      background: #dcebd7;
+      color: #1d4623;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .featured-image {
+      background: #dce4d4;
+      border-radius: 20px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #3f583b;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      background-image: linear-gradient(145deg, #d2ddc8, #e5ede0);
+    }
+    .infographic-box {
+      background: #eef2e9;
+      padding: 2rem 1.8rem;
+      border-radius: 32px;
+      border-left: 8px solid #7d9f77;
+      margin: 2.8rem 0;
+    }
+    .checklist {
+      background: #f5f8f2;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #d4dfcd;
+      margin: 2.5rem 0;
+    }
+
+    /* about page specific */
+    .mission-block {
+      background: #eef3ea;
+      border-radius: 40px;
+      padding: 2.5rem 2.8rem;
+      margin: 2rem 0 3rem;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 2rem;
+      margin: 1.8rem 0;
+    }
+    .team-card {
+      text-align: center;
+      background: white;
+      padding: 1.5rem 1rem;
+      border-radius: 40px;
+      box-shadow: 0 8px 18px -8px rgba(40, 60, 30, 0.06);
+      border: 1px solid #e8eee0;
+    }
+    .team-card .avatar {
+      width: 80px;
+      height: 80px;
+      background: #d2ddc8;
+      border-radius: 50%;
+      margin: 0 auto 0.8rem;
+      background-image: radial-gradient(circle at 30% 30%, #baceb0, #d3e2cb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #2b4a2a;
+    }
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+      margin: 1.5rem 0 2rem;
+      padding: 1.5rem 2rem;
+      background: #f6faf3;
+      border-radius: 40px;
+    }
+    .timeline-item { flex: 1 0 160px; }
+    .timeline-item strong { display: block; font-size: 1.4rem; color: #1d3d21; }
+
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+    @media (max-width: 500px) {
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ——— header (exact from original) ——— -->
+  <header class="site-header">
+    <div class="logo">Zoralis<span> · Green Pathways</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="border-bottom: 2px solid #7f9f7a;">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </nav>
+  </header>
+
+  <!-- ——— ABOUT HERO ——— -->
+  <section style="padding: 1.5rem 0 0.5rem;">
+    <h1 style="font-size: 3rem;">About Zoralis</h1>
+    <p style="font-size: 1.2rem; max-width: 760px; color: #3d5239; font-weight: 300;">
+      Cultivating knowledge at the intersection of ecology, food, and community.
+      We are gardeners, soil stewards, and perennial optimists.
+    </p>
+  </section>
+
+  <!-- ——— MISSION BLOCK ——— -->
+  <div class="mission-block">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 2; min-width: 240px;">
+        <span class="badge-green">🌿 our mission</span>
+        <h2 style="margin-top: 0.5rem; border-left: none; padding-left: 0; font-size: 2rem;">Rooted in regeneration</h2>
+        <p style="font-size: 1.05rem;">
+          Zoralis Green Pathways was born from a simple belief: that gardening is the most
+          direct way to heal land, nourish communities, and restore our connection to the living world.
+          We share science-backed, experience-tested practices for every scale — from windowsill herbs to forest gardens.
+        </p>
+        <p style="font-size: 1.05rem;">
+          Our editorial team includes ecologists, organic farmers, and permaculture designers.
+          We publish deep-dive guides, seasonal journals, and practical toolkits to help you grow with confidence.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 160px; background: #dce8d4; border-radius: 40px; padding: 1.8rem 1.5rem; text-align: center;">
+        <div style="font-size: 3.2rem; line-height: 1;">🌱</div>
+        <div style="font-weight: 600; margin-top: 0.2rem;">since 2019</div>
+        <div class="small">80+ guides published</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— TEAM ——— -->
+  <h2>Meet the growers</h2>
+  <div class="team-grid">
+    <div class="team-card"><div class="avatar">🌻</div><h4 style="margin: 0.2rem 0;">Elena Voss</h4><div class="small">editor · soil ecologist</div></div>
+    <div class="team-card"><div class="avatar">🍄</div><h4 style="margin: 0.2rem 0;">Marcus Li</h4><div class="small">permaculture designer</div></div>
+    <div class="team-card"><div class="avatar">🥬</div><h4 style="margin: 0.2rem 0;">Sasha Reed</h4><div class="small">market gardener</div></div>
+    <div class="team-card"><div class="avatar">🌳</div><h4 style="margin: 0.2rem 0;">James Okonkwo</h4><div class="small">agroforestry lead</div></div>
+  </div>
+
+  <!-- ——— TIMELINE ——— -->
+  <div style="margin: 2.5rem 0;">
+    <h2 style="border-left-color: #b7cdb0;">Our path</h2>
+    <div class="timeline">
+      <div class="timeline-item"><strong>2019</strong> first newsletter · 200 subscribers</div>
+      <div class="timeline-item"><strong>2021</strong> launched the blog & resource hub</div>
+      <div class="timeline-item"><strong>2023</strong> 50+ in-depth tutorials</div>
+      <div class="timeline-item"><strong>2026</strong> global community · 12k+ readers</div>
+    </div>
+  </div>
+
+  <!-- ——— VALUES (grid) ——— -->
+  <h2>Core values</h2>
+  <div class="grid-3" style="margin-top: 1rem;">
+    <div class="card"><span class="badge-green">🌍</span><h3 style="margin-top: 0.5rem;">Ecological integrity</h3><p>Every practice we share supports soil, water, and biodiversity — no shortcuts.</p></div>
+    <div class="card"><span class="badge-green">📖</span><h3 style="margin-top: 0.5rem;">Radical accessibility</h3><p>Knowledge should be free and actionable. We break down complex topics into clear steps.</p></div>
+    <div class="card"><span class="badge-green">🤝</span><h3 style="margin-top: 0.5rem;">Community resilience</h3><p>Gardens are gathering places. We foster exchange between beginners and seasoned growers.</p></div>
+  </div>
+
+  <!-- ——— STATS / INFOGRAPHIC (reuse style) ——— -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2.5rem 0;">
+    <div style="flex: 1.6; min-width: 240px; background: #f3f7ef; border-radius: 40px; padding: 1.8rem 2rem;">
+      <span class="badge-green">📊 impact</span>
+      <h3 style="margin-top: 0.4rem;">By the numbers</h3>
+      <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #dce4d2;">🌱 140+ articles & guides</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #dce4d2;">🌿 32 expert contributors</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #dce4d2;">🌍 readers in 47 countries</li>
+        <li style="padding: 0.5rem 0;">📬 weekly newsletter to 6k+ growers</li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 200px; background: #e8efe2; border-radius: 40px; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-size: 3rem; line-height: 1;">🌾</div>
+      <h3 style="margin: 0.3rem 0 0;">"Grow deeper"</h3>
+      <p class="small" style="margin-bottom: 0;">Our motto — because the real harvest is wisdom.</p>
+    </div>
+  </div>
+
+  <!-- ——— TESTIMONIAL / QUOTE ——— -->
+  <div class="infographic-box" style="border-left-color: #b3cbaa;">
+    <p style="font-size: 1.3rem; font-style: italic; margin-bottom: 0.2rem; font-family: 'IBM Plex Serif', serif;">
+      “Zoralis has transformed how I think about soil. The guides are thorough, beautiful, and deeply practical.”
+    </p>
+    <p style="margin-top: 0.2rem;">— Claire M., urban grower, Berlin</p>
+  </div>
+
+  <!-- ——— PARTNERS / COLLABORATORS ——— -->
+  <div style="margin: 2.5rem 0;">
+    <h2 style="border-left-color: #afc8a8;">Collaborators</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem 3rem; background: #faf9f5; padding: 1.2rem 2rem; border-radius: 40px;">
+      <span style="font-weight: 500;">Seed Savers Exchange</span>
+      <span style="font-weight: 500;">Kisstheground</span>
+      <span style="font-weight: 500;">Permaculture Association</span>
+      <span style="font-weight: 500;">Organic Growers Alliance</span>
+    </div>
+  </div>
+
+  <!-- ——— NEWSLETTER (exact from original) ——— -->
+  <div class="newsletter" style="background: #e5ede0; padding: 3rem 2.5rem; border-radius: 40px; margin: 3rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+    <div><h3 style="margin: 0; font-size: 1.7rem;">Deepen your practice</h3><p style="margin: 0.2rem 0 0;">Weekly insights, seasonal guides, and exclusive content.</p></div>
+    <div><input type="email" placeholder="your email" aria-label="email" style="padding: 0.9rem 1.8rem; border: none; border-radius: 60px; background: white; font-size: 1rem; min-width: 260px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);"><button style="background: #1d3d21; border: none; color: white; font-weight: 600; padding: 0.9rem 2.2rem; border-radius: 60px; font-size: 1rem; cursor: pointer;">Subscribe</button></div>
+  </div>
+
+  <!-- ——— FOOTER ——— -->
+  <footer class="footer" style="padding: 3rem 0 2rem; border-top: 1px solid #ddd6c6; display: flex; flex-wrap: wrap; justify-content: space-between; color: #4e6249; font-size: 0.95rem;">
+    <div>© 2026 Zoralis Green Pathways · cultivated wisdom</div>
+    <div><a href="about.html">About</a> · <a href="#">Contribute</a> · <a href="contact.html">Contact</a></div>
+  </footer>
+
+</div> <!-- end container -->
+</body>
+</html>

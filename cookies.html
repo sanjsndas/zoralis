@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookies · Zoralis Green Pathways</title>
+  <!-- unique typography: IBM Plex Serif + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf7f2;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'IBM Plex Serif', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1d2c1f;
+    }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.1rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #7f9f7a;
+      padding-left: 1rem;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      color: #2e3a2b;
+    }
+    .meta, .small {
+      font-size: 0.9rem;
+      color: #5f6e5a;
+    }
+    a {
+      color: #2d6b3a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b6cdb0;
+    }
+    a:hover {
+      color: #1b4624;
+      border-bottom: 1px solid #1b4624;
+    }
+    .site-header {
+      padding: 2rem 0 1rem;
+      border-bottom: 1px solid #e2dcd2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1d3d21;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6f8f6a;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .nav-links a {
+      border-bottom: none;
+      color: #2f402c;
+    }
+    .nav-links a:hover {
+      color: #1b4b25;
+    }
+    /* cookies hero */
+    .privacy-hero {
+      padding: 2.5rem 0 1rem;
+      border-bottom: 2px solid #e8e2d6;
+      margin-bottom: 1.5rem;
+    }
+    .privacy-hero h1 {
+      font-size: 2.8rem;
+    }
+    .privacy-hero .sub {
+      font-size: 1.2rem;
+      color: #3d5239;
+      max-width: 700px;
+      margin-top: 0.3rem;
+    }
+    .privacy-card {
+      background: #fffffffb;
+      padding: 2rem 2.5rem 2.8rem;
+      border-radius: 40px;
+      border: 1px solid #ece7de;
+      box-shadow: 0 12px 28px -10px rgba(30, 40, 20, 0.06);
+      margin: 1.5rem 0 2.5rem;
+    }
+    .privacy-card h2 {
+      border-left: 6px solid #7f9f7a;
+      padding-left: 1rem;
+      margin-top: 2.2rem;
+      font-size: 1.8rem;
+    }
+    .privacy-card h2:first-of-type {
+      margin-top: 0.2rem;
+    }
+    .privacy-card ul {
+      margin: 0.8rem 0 1.8rem 1.8rem;
+      color: #2e3a2b;
+    }
+    .privacy-card li {
+      margin-bottom: 0.4rem;
+    }
+    .badge-green {
+      background: #dcebd7;
+      color: #1d4623;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .footer {
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #ddd6c6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: #4e6249;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #d4dfcd;
+      margin: 2rem 0;
+    }
+    .highlight-box {
+      background: #f3f8f0;
+      border-radius: 28px;
+      padding: 1.2rem 2rem;
+      margin: 1.2rem 0;
+      border-left: 6px solid #aac0a2;
+    }
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.95rem;
+    }
+    .cookie-table th {
+      background: #eef3ea;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      border-bottom: 2px solid #c7d6be;
+    }
+    .cookie-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #dfe8d8;
+    }
+    .cookie-table tr:last-child td {
+      border-bottom: none;
+    }
+    @media (max-width: 820px) {
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; }
+      .privacy-hero h1 { font-size: 2.2rem; }
+      .privacy-card { padding: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (identical to main) -->
+  <header class="site-header">
+    <div class="logo">Zoralis<span> · Green Pathways</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html" style="border-bottom: 2px solid #7f9f7a;">Cookies Policy</a>
+    </nav>
+  </header>
+
+  <!-- cookies hero -->
+  <section class="privacy-hero">
+    <h1>🍪 Cookies Policy</h1>
+    <div class="sub">We use cookies to enhance your experience, remember preferences, and gather anonymous usage data. Your privacy is our priority.</div>
+  </section>
+
+  <!-- main cookies content -->
+  <div class="privacy-card">
+
+    <h2>What are cookies?</h2>
+    <p>Cookies are small text files stored on your device when you visit a website. They help us remember your preferences, understand how you interact with our content, and improve your overall experience. We use only minimal, privacy‑conscious cookies.</p>
+
+    <h2>How we use cookies</h2>
+    <p>Zoralis Green Pathways uses cookies for the following purposes:</p>
+    <ul>
+      <li><strong>Essential functionality</strong> – to keep the website working properly (e.g., remembering your cookie consent choice).</li>
+      <li><strong>Preferences</strong> – to remember your language or region settings.</li>
+      <li><strong>Analytics</strong> – to collect anonymous statistics about page visits and traffic sources, helping us improve our content.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <span style="font-weight: 600;">🌿 We do not use tracking cookies for advertising</span> or share your data with third‑party advertisers. Your browsing remains yours.
+    </div>
+
+    <h2>Cookies we use</h2>
+    <p>Below is a list of the cookies we typically place on your device. We keep this list updated, but please note that third‑party services (like embedded videos) may set their own cookies.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>zoralis_consent</code></td>
+          <td>Stores your cookie consent preference.</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td><code>zoralis_session</code></td>
+          <td>Maintains session state for logged‑in users (if applicable).</td>
+          <td>Session</td>
+        </tr>
+        <tr>
+          <td><code>_ga</code> (Google Analytics)</td>
+          <td>Anonymous usage statistics (IP anonymized).</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td><code>_gid</code> (Google Analytics)</td>
+          <td>Distinguishes users for analytics.</td>
+          <td>24 hours</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Managing your cookies</h2>
+    <p>You can control and delete cookies at any time through your browser settings. Most browsers allow you to block or remove cookies, though this may affect the functionality of certain features on our site.</p>
+    <ul>
+      <li>Chrome: Settings → Privacy and security → Cookies and other site data.</li>
+      <li>Firefox: Options → Privacy & Security → Cookies and Site Data.</li>
+      <li>Safari: Preferences → Privacy → Manage Website Data.</li>
+      <li>Edge: Settings → Cookies and site permissions → Manage and delete cookies.</li>
+    </ul>
+
+    <h2>Third‑party cookies</h2>
+    <p>We sometimes embed content from external platforms (e.g., gardening videos, research articles). These services may place their own cookies. We recommend reviewing their privacy policies for more information.</p>
+
+    <h2>Your consent</h2>
+    <p>By continuing to use our website, you agree to our use of cookies as described in this policy. You can withdraw your consent at any time by adjusting your browser settings or clearing your cookies.</p>
+
+    <h2>Updates to this policy</h2>
+    <p>We may update this Cookies Policy to reflect changes in technology or legal requirements. Any updates will be published on this page with a revised date.</p>
+
+    <p style="margin-top: 2.2rem;"><span class="badge-green">Last updated: June 30, 2026</span></p>
+
+  </div> <!-- end privacy-card -->
+
+  <!-- extra info / contact shortcut -->
+  <div style="background: #eef3ea; border-radius: 40px; padding: 1.5rem 2.2rem; margin: 0.5rem 0 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+    <div><span style="font-weight: 600;">🔒 Questions about cookies?</span> Reach our privacy team at <strong>privacy@zoralisgreen.com</strong></div>
+    <div><a href="contact.html" style="background: #1d3d21; color: white; padding: 0.4rem 1.8rem; border-radius: 60px; border-bottom: none; font-weight: 500;">Contact</a></div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Zoralis Green Pathways · cultivated wisdom</div>
+    <div><a href="about.html">About</a> · <a href="#">Contribute</a> · <a href="contact.html">Contact</a></div>
+  </footer>
+
+</div> <!-- end container -->
+</body>
+</html>

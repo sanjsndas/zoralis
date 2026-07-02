@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoralis Green Pathways · authority gardening blog</title>
+  <!-- unique typography: IBM Plex Serif + Inter (fresh, readable) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf7f2;  /* warm off-white */
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    /* unique spacing & typography */
+    h1, h2, h3, h4 {
+      font-family: 'IBM Plex Serif', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1d2c1f;
+    }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.1rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #7f9f7a;
+      padding-left: 1rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      color: #3c5438;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+      color: #2e3a2b;
+    }
+    .meta, .small {
+      font-size: 0.9rem;
+      color: #5f6e5a;
+      letter-spacing: 0.02em;
+    }
+    a {
+      color: #2d6b3a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b6cdb0;
+    }
+    a:hover {
+      color: #1b4624;
+      border-bottom: 1px solid #1b4624;
+    }
+    /* header / nav */
+    .site-header {
+      padding: 2rem 0 1rem;
+      border-bottom: 1px solid #e2dcd2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1d3d21;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6f8f6a;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .nav-links a {
+      border-bottom: none;
+      color: #2f402c;
+    }
+    .nav-links a:hover {
+      color: #1b4b25;
+    }
+    /* hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      border-bottom: 2px solid #e8e2d6;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      max-width: 900px;
+    }
+    .hero .sub {
+      font-size: 1.25rem;
+      color: #3d5239;
+      max-width: 780px;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd6c8;
+    }
+    .hero-tags span {
+      background: #eaefe6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2d4a2b;
+    }
+    /* grid & cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: #fffffffb;
+      padding: 1.8rem 1.8rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 28px -10px rgba(30, 40, 20, 0.06);
+      transition: all 0.15s;
+      border: 1px solid #ece7de;
+    }
+    .card:hover {
+      box-shadow: 0 20px 32px -14px rgba(50, 70, 40, 0.12);
+      border-color: #cddcc5;
+    }
+    .card h3 {
+      margin-top: 0.2rem;
+      font-size: 1.5rem;
+    }
+    .card .cat {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #698363;
+      background: #ecf3e8;
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-bottom: 0.8rem;
+    }
+    .featured-image {
+      background: #dce4d4;
+      border-radius: 20px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #3f583b;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      background-image: linear-gradient(145deg, #d2ddc8, #e5ede0);
+    }
+    .infographic-box {
+      background: #eef2e9;
+      padding: 2rem 1.8rem;
+      border-radius: 32px;
+      border-left: 8px solid #7d9f77;
+      margin: 2.8rem 0;
+    }
+    .infographic-box h3 {
+      margin-top: 0;
+    }
+    /* lists & tables */
+    ul, ol {
+      padding-left: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: #fafaf7;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    th {
+      background: #e3ece0;
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+      font-weight: 600;
+      color: #1e3b22;
+    }
+    td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #e6ede1;
+    }
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #e2e0d6;
+      padding: 1.2rem 0;
+    }
+    .faq-item h4 {
+      font-size: 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    /* newsletter */
+    .newsletter {
+      background: #e5ede0;
+      padding: 3rem 2.5rem;
+      border-radius: 40px;
+      margin: 3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsletter input {
+      padding: 0.9rem 1.8rem;
+      border: none;
+      border-radius: 60px;
+      background: white;
+      font-size: 1rem;
+      min-width: 260px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .newsletter button {
+      background: #1d3d21;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    /* footer */
+    .footer {
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #ddd6c6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: #4e6249;
+      font-size: 0.95rem;
+    }
+    /* responsive */
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; }
+      .newsletter { flex-direction: column; align-items: stretch; gap: 1rem; }
+    }
+    @media (max-width: 500px) {
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+    /* unique extras */
+    .badge-green {
+      background: #dcebd7;
+      color: #1d4623;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .checklist {
+      background: #f5f8f2;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #d4dfcd;
+      margin: 2.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Zoralis<span> · Green Pathways</span></div>
+    <nav class="nav-links">
+    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Gardening at the edge of possibility</h1>
+    <div class="sub">Deep soil wisdom, regenerative practices, and the art of growing food in harmony with nature — from kitchen gardens to forest edges.</div>
+    <div class="hero-tags">
+      <span>🌱 Permaculture</span>
+      <span>🌿 Soil health</span>
+      <span>🥬 Year-round growing</span>
+      <span>🌻 Pollinator corridors</span>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLES (2 large cards) -->
+  <section style="margin: 1.5rem 0 0.5rem;">
+    <h2 style="border-left-color: #b7cdb0;">Featured insights</h2>
+    <div class="grid-2">
+      <article class="card">
+        <div class="featured-image" style="background: #dce8d4; height: 140px; background-image: radial-gradient(circle at 20% 30%, #bdd2b0, #d3e2cb);">
+          <span style="background: #ffffff90; padding: 0.3rem 1.2rem; border-radius: 40px;">🍃 regenerative</span>
+        </div>
+        <span class="cat">Deep dive</span>
+        <h3>Building living soil: the fungal network advantage</h3>
+        <p>Mycorrhizal fungi are the hidden internet of the garden. This guide explains how to cultivate soil biology for drought resilience, nutrient density, and carbon capture.</p>
+        <a href="#">Read more →</a>
+      </article>
+      <article class="card">
+        <div class="featured-image" style="background: #d0ddc4; height: 140px; background-image: radial-gradient(circle at 70% 40%, #b6cdab, #d2e2cb);">
+          <span style="background: #ffffff90; padding: 0.3rem 1.2rem; border-radius: 40px;">🌾 no-till</span>
+        </div>
+        <span class="cat">Masterclass</span>
+        <h3>No-till market gardening: from bed prep to harvest</h3>
+        <p>Four-season production without turning the soil. We break down the layer system, cover crop cocktails, and direct seeding strategies used by professional growers.</p>
+        <a href="#">Read more →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- BEGINNER GUIDES + EXPERT RESOURCES (2 cols) -->
+  <div class="grid-2" style="margin-top: 1rem;">
+    <div>
+      <h2 style="border-left-color: #afc8a8;">Beginner guides</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Starting a kitchen garden: 10 square feet of abundance</a></li>
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Composting 101: hot, cold, and vermicompost</a></li>
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Seed starting without a greenhouse: windowsill mastery</a></li>
+        <li style="padding: 0.7rem 0;">→ <a href="#">Garden tool care: extend the life of your equipment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="border-left-color: #afc8a8;">Expert resources</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Brix testing for nutrient density</a></li>
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Designing polycultures: the 3 sister guild</a></li>
+        <li style="padding: 0.7rem 0; border-bottom: 1px solid #e8eee0;">→ <a href="#">Biochar: activation and soil incorporation</a></li>
+        <li style="padding: 0.7rem 0;">→ <a href="#">Microbial brews: compost tea & ferments</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POPULAR CATEGORIES + TRENDING (3 cols) -->
+  <h2 style="margin-top: 2.2rem;">Explore by category</h2>
+  <div class="grid-3">
+    <div class="card"><span class="badge-green">🌱</span> <h3 style="font-size: 1.4rem;">Soil & fertility</h3><p>Mineral balancing, cover crops, and organic amendments.</p></div>
+    <div class="card"><span class="badge-green">🌿</span> <h3 style="font-size: 1.4rem;">Water wisdom</h3><p>Rainwater harvesting, swales, and dry-climate strategies.</p></div>
+    <div class="card"><span class="badge-green">🍅</span> <h3 style="font-size: 1.4rem;">Edible perennials</h3><p>Fruit trees, berries, and perennial vegetables.</p></div>
+  </div>
+
+  <!-- LATEST ARTICLES (3 cards) -->
+  <h2>Latest articles</h2>
+  <div class="grid-3">
+    <article class="card"><span class="cat">recent</span><h3>Winter garden planning: successions & low-tunnels</h3><p>Extend your season with simple structures and cold-hardy varieties. </p><a href="#">Read more →</a></article>
+    <article class="card"><span class="cat">recent</span><h3>Beneficial insects: attract & identify</h3><p>Learn to recognize lacewings, hoverflies, and parasitic wasps.</p><a href="#">Read more →</a></article>
+    <article class="card"><span class="cat">recent</span><h3>Harvesting and curing garlic & onions</h3><p>Timing, curing, and storage for long-term flavor.</p><a href="#">Read more →</a></article>
+  </div>
+
+  <!-- IN-DEPTH TUTORIALS + INFOGRAPHIC (hybrid) -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2.5rem 0;">
+    <div style="flex: 1.6; min-width: 260px;">
+      <h2 style="border-left-color: #9bb394;">In-depth tutorials</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="background: #f6faf3; padding: 0.8rem 1.2rem; border-radius: 40px; margin-bottom: 0.8rem;">▸ <a href="#">Grafting fruit trees: bench & whip-and-tongue</a></li>
+        <li style="background: #f6faf3; padding: 0.8rem 1.2rem; border-radius: 40px; margin-bottom: 0.8rem;">▸ <a href="#">Building a worm tower in raised beds</a></li>
+        <li style="background: #f6faf3; padding: 0.8rem 1.2rem; border-radius: 40px; margin-bottom: 0.8rem;">▸ <a href="#">Saving seeds: isolation & fermentation</a></li>
+        <li style="background: #f6faf3; padding: 0.8rem 1.2rem; border-radius: 40px;">▸ <a href="#">DIY soil sieve & compost screen</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 220px; background: #eef3ea; border-radius: 40px; padding: 1.8rem;">
+      <span class="badge-green">📊 infographic</span>
+      <h3 style="margin-top: 0.5rem;">Nutrient cycling in the garden</h3>
+      <p>Visual guide to the flow of nitrogen, phosphorus, and carbon through compost, plants, and soil life.</p>
+      <div style="background: #d7e2d0; border-radius: 20px; height: 110px; display: flex; align-items: center; justify-content: center; margin: 1rem 0; font-weight: 500; color: #2d4f2b;">[infographic placeholder]</div>
+    </div>
+  </div>
+
+  <!-- RESOURCE HUB -->
+  <div style="background: #f3f7ef; border-radius: 40px; padding: 2rem 2.5rem; margin: 2rem 0;">
+    <h2 style="margin-top: 0; border-left-color: #7f9f7a;">Resource hub</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div><strong>📚 eBooks</strong><br> <a href="#">Perennial vegetables guide</a> · <a href="#">Soil food web</a></div>
+      <div><strong>🎧 Podcast</strong><br> <a href="#">Growers' voices</a> · seasonal episodes</div>
+      <div><strong>🧪 Tools</strong><br> <a href="#">Hardiness zone map</a> · <a href="#">Planting calendar</a></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Frequently asked questions</h2>
+  <div class="faq-item"><h4>What is the best soil mix for raised beds?</h4><p>A blend of 40% compost, 30% topsoil, and 30% aeration (coco coir or pumice) gives excellent structure and nutrition.</p></div>
+  <div class="faq-item"><h4>How often should I water deep-rooted perennials?</h4><p>Deep watering once a week during dry spells is better than light daily watering — it encourages deep roots.</p></div>
+  <div class="faq-item"><h4>Can I grow vegetables in partial shade?</h4><p>Yes. Leafy greens, herbs, and root vegetables like beets and carrots tolerate 4-5 hours of direct sun.</p></div>
+
+  <!-- COMPARISON TABLE / CHECKLIST -->
+  <h2>Quick comparison: organic mulch types</h2>
+  <table>
+    <tr><th>Mulch</th><th>Water retention</th><th>Decomposition rate</th><th>Best use</th></tr>
+    <tr><td>Straw</td><td>High</td><td>Medium</td><td>Vegetable beds</td></tr>
+    <tr><td>Wood chips</td><td>Medium</td><td>Slow</td><td>Perennial borders, paths</td></tr>
+    <tr><td>Leaf mold</td><td>Very high</td><td>Slow</td><td>Soil amendment, top-dress</td></tr>
+    <tr><td>Green manure</td><td>Medium</td><td>Fast</td><td>Cover cropping</td></tr>
+  </table>
+
+  <div class="checklist">
+    <h3 style="margin-top: 0;">☑️ Spring garden checklist</h3>
+    <ul style="columns: 2; list-style: none; padding-left: 0;">
+      <li>✓ Test soil pH</li><li>✓ Clean and sharpen tools</li>
+      <li>✓ Start hardy seeds indoors</li><li>✓ Prepare no-till beds</li>
+      <li>✓ Set up drip irrigation</li><li>✓ Order beneficial insects</li>
+    </ul>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div><h3 style="margin: 0; font-size: 1.7rem;">Deepen your practice</h3><p style="margin: 0.2rem 0 0;">Weekly insights, seasonal guides, and exclusive content.</p></div>
+    <div><input type="email" placeholder="your email" aria-label="email"><button>Subscribe</button></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© 2026 Zoralis Green Pathways · cultivated wisdom</div>
+    <div><a href="#">About</a> · <a href="#">Contribute</a> · <a href="#">Contact</a></div>
+  </footer>
+
+</div> <!-- end container -->
+</body>
+</html>

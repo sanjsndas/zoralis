@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use · Zoralis Green Pathways</title>
+  <!-- unique typography: IBM Plex Serif + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ———— reset & base (same as about) ———— */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf7f2;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
+    h1, h2, h3, h4 {
+      font-family: 'IBM Plex Serif', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1d2c1f;
+    }
+    h1 { font-size: 2.8rem; font-weight: 700; }
+    h2 {
+      font-size: 2.1rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #7f9f7a;
+      padding-left: 1rem;
+    }
+    h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.8rem; color: #3c5438; }
+    p { margin-bottom: 1.4rem; color: #2e3a2b; }
+    .meta, .small { font-size: 0.9rem; color: #5f6e5a; letter-spacing: 0.02em; }
+    a {
+      color: #2d6b3a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b6cdb0;
+    }
+    a:hover { color: #1b4624; border-bottom: 1px solid #1b4624; }
+
+    /* header / nav (exact copy) */
+    .site-header {
+      padding: 2rem 0 1rem;
+      border-bottom: 1px solid #e2dcd2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1d3d21;
+      letter-spacing: -0.03em;
+    }
+    .logo span { color: #6f8f6a; font-weight: 400; }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .nav-links a { border-bottom: none; color: #2f402c; }
+    .nav-links a:hover { color: #1b4b25; }
+
+    /* cards & utilities (reuse) */
+    .card {
+      background: #fffffffb;
+      padding: 1.8rem 1.8rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 28px -10px rgba(30, 40, 20, 0.06);
+      border: 1px solid #ece7de;
+      transition: all 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 20px 32px -14px rgba(50, 70, 40, 0.12);
+      border-color: #cddcc5;
+    }
+    .badge-green {
+      background: #dcebd7;
+      color: #1d4623;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .featured-image {
+      background: #dce4d4;
+      border-radius: 20px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #3f583b;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      background-image: linear-gradient(145deg, #d2ddc8, #e5ede0);
+    }
+    .infographic-box {
+      background: #eef2e9;
+      padding: 2rem 1.8rem;
+      border-radius: 32px;
+      border-left: 8px solid #7d9f77;
+      margin: 2.8rem 0;
+    }
+    .checklist {
+      background: #f5f8f2;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #d4dfcd;
+      margin: 2.5rem 0;
+    }
+
+    /* terms specific: legal style */
+    .terms-section {
+      background: #fffffffb;
+      border-radius: 32px;
+      padding: 2rem 2.5rem;
+      margin: 1.8rem 0;
+      border: 1px solid #ece7de;
+      box-shadow: 0 6px 14px -8px rgba(30, 40, 20, 0.04);
+    }
+    .terms-section ul {
+      padding-left: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .terms-section li {
+      margin-bottom: 0.5rem;
+      color: #2e3a2b;
+    }
+    .terms-highlight {
+      background: #f2f7ef;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 500;
+      margin: 0.5rem 0 1.2rem;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .terms-section { padding: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ——— header (exact from original) ——— -->
+  <header class="site-header">
+    <div class="logo">Zoralis<span> · Green Pathways</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html" style="border-bottom: 2px solid #7f9f7a;">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </nav>
+  </header>
+
+  <!-- ——— TERMS HERO ——— -->
+  <section style="padding: 1.5rem 0 0.5rem;">
+    <h1 style="font-size: 3rem;">Terms of Use</h1>
+    <p style="font-size: 1.2rem; max-width: 760px; color: #3d5239; font-weight: 300;">
+      Ground rules for our digital garden. By using Zoralis Green Pathways, you agree to cultivate respect, responsibility, and care.
+    </p>
+    <div class="terms-highlight">📅 Last updated: June 30, 2026</div>
+  </section>
+
+  <!-- ——— TERMS CONTENT ——— -->
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa; margin-top: 0;">1. Acceptance of Terms</h2>
+    <p>By accessing or using the Zoralis Green Pathways website (the “Service”), you agree to be bound by these Terms. If you do not agree, please do not use the Service. We reserve the right to update these Terms at any time; your continued use constitutes acceptance.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">2. Content & Intellectual Property</h2>
+    <p>All articles, guides, illustrations, and design elements are the property of Zoralis Green Pathways or our contributors. You may:</p>
+    <ul>
+      <li>Read, share, and reference our content for personal, non‑commercial purposes.</li>
+      <li>Quote short excerpts with attribution to Zoralis Green Pathways.</li>
+    </ul>
+    <p>You may not reproduce, distribute, or create derivative works without explicit permission. For media or partnership inquiries, <a href="contact.html">contact us</a>.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">3. User Conduct</h2>
+    <p>We believe in generous, constructive dialogue. When engaging with our community (comments, forums, or social media), you agree to:</p>
+    <ul>
+      <li>Be respectful and kind — no harassment, hate speech, or trolling.</li>
+      <li>Stay on topic and contribute meaningfully to the conversation.</li>
+      <li>Not impersonate others or misrepresent your affiliation.</li>
+    </ul>
+    <p>We reserve the right to moderate or remove content that violates these principles.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">4. Disclaimer of Warranties</h2>
+    <p>Our content is for educational and informational purposes only. While we strive for accuracy, gardening and ecological practices depend on many variables (climate, soil, etc.). We do not guarantee specific results. Always exercise your own judgment and consult local experts when necessary.</p>
+    <p style="background: #f5f8f2; padding: 1rem 1.5rem; border-radius: 24px;">🌿 <strong>Good faith:</strong> We provide information “as is” without warranties of any kind, either express or implied.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">5. External Links</h2>
+    <p>Our articles may link to third‑party websites or resources. We are not responsible for the content, accuracy, or practices of those sites. Links do not imply endorsement.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">6. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Zoralis Green Pathways shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Service. This includes loss of data, crops, or profits — even if we have been advised of the possibility.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">7. Privacy & Cookies</h2>
+    <p>Your privacy matters. We collect minimal data to improve your experience. For details, please review our <a href="privacy.html">Privacy Policy</a> and <a href="cookies.html">Cookies Policy</a>, which are incorporated into these Terms.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">8. Governing Law</h2>
+    <p>These Terms shall be governed by the laws of the State of California, without regard to conflict of law provisions. Any disputes shall be resolved in the courts of San Francisco County.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2 style="border-left-color: #b3cbaa;">9. Changes to These Terms</h2>
+    <p>We may revise these Terms periodically. The most current version will always be available at this URL. If changes are material, we’ll notify you via a banner or email.</p>
+  </div>
+
+  <div class="terms-section" style="background: #eef3ea; border: 1px solid #d0dfc7;">
+    <h2 style="border-left-color: #7d9f77; margin-top: 0;">📬 Contact</h2>
+    <p>If you have questions about these Terms, please reach out via our <a href="contact.html">contact page</a> or email us at <strong>legal@zoralis.green</strong>.</p>
+  </div>
+
+  <!-- ——— QUICK SUMMARY CARD ——— -->
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2.5rem 0;">
+    <div class="card" style="flex:1; min-width: 200px;">
+      <span class="badge-green">📖</span>
+      <h3 style="margin-top: 0.3rem;">Read. Share. Grow.</h3>
+      <p class="small">All content is protected but we encourage thoughtful sharing with attribution.</p>
+    </div>
+    <div class="card" style="flex:1; min-width: 200px;">
+      <span class="badge-green">🤝</span>
+      <h3 style="margin-top: 0.3rem;">Community first</h3>
+      <p class="small">Be kind, stay curious, and help us keep this a welcoming space.</p>
+    </div>
+    <div class="card" style="flex:1; min-width: 200px;">
+      <span class="badge-green">🌱</span>
+      <h3 style="margin-top: 0.3rem;">Good faith</h3>
+      <p class="small">We’re human, we make mistakes. Let’s work together to improve.</p>
+    </div>
+  </div>
+
+  <!-- ——— NEWSLETTER (exact from original) ——— -->
+  <div class="newsletter" style="background: #e5ede0; padding: 3rem 2.5rem; border-radius: 40px; margin: 3rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+    <div><h3 style="margin: 0; font-size: 1.7rem;">Deepen your practice</h3><p style="margin: 0.2rem 0 0;">Weekly insights, seasonal guides, and exclusive content.</p></div>
+    <div><input type="email" placeholder="your email" aria-label="email" style="padding: 0.9rem 1.8rem; border: none; border-radius: 60px; background: white; font-size: 1rem; min-width: 260px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);"><button style="background: #1d3d21; border: none; color: white; font-weight: 600; padding: 0.9rem 2.2rem; border-radius: 60px; font-size: 1rem; cursor: pointer;">Subscribe</button></div>
+  </div>
+
+  <!-- ——— FOOTER ——— -->
+  <footer class="footer" style="padding: 3rem 0 2rem; border-top: 1px solid #ddd6c6; display: flex; flex-wrap: wrap; justify-content: space-between; color: #4e6249; font-size: 0.95rem;">
+    <div>© 2026 Zoralis Green Pathways · cultivated wisdom</div>
+    <div><a href="about.html">About</a> · <a href="#">Contribute</a> · <a href="contact.html">Contact</a></div>
+  </footer>
+
+</div> <!-- end container -->
+</body>
+</html>
